@@ -40,21 +40,21 @@ public class BMICalculator {
         // Algorithm for the choice in terms of the imperial system system
         if(choice == 2) {
         	
-            
+           //Prompt for the height in terms of inches and scan it 
            System.out.println("Enter your height in term of Inches: \n");
            double Height2 = console.nextDouble();
-            
+           //Prompt for the height in terms of pounds and scan it 
 	   System.out.println("\nEnter your weight in Pounds: \n");     
            double Weight2 = console.nextDouble();
-        	
+           //Calculate the according BMI	
            double Bmi2 = (Weight2*703/Height2*2);
         
-        
+           //Print the user's BMI onto the screen
             if (Bmi2 >= 0) System.out.printf("\nBMI = %.1f\n",Bmi2);
                     
-		
+	   
             else System.out.printf("You chose...poorly");
-                   
+           //Present the user with the option according to his BMI       
             if(impBmi >= 0) {
         		if (impBmi < 18.5) System.out.println("You are underweight");
             
