@@ -8,7 +8,7 @@ public class Application {
  		 try (Scanner integer = new Scanner(System.in)) {
 		
 			int number;
-			
+			//Prompt the user for an option and scan it
 			System.out.println("What do you want to do? : 1. Encrypt my number or 2. Decrypt my number");
 			int choice = integer.nextInt();
 			
