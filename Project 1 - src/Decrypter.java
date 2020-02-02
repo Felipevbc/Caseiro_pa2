@@ -1,36 +1,28 @@
-// This program returns the original number to the main class
 public class Decrypter {
 
-	public static int decrypt( int n) 
+	public static int Decrypt(int number) 
 	{
-	   // Obtain individual digits from Application class
-	   int a = n / 1000;
-	   int b = (n % 1000) / 100;
-	   int c = (n % 100) / 10;
-	   int d = n % 10;
+	   int DecryptedNumber;
+	   //Get the four new digits from the decrypted number
+	   int firstnum = (number/1000);
+	   int secondnum = ((number % 1000)/100);
+	   int thirdnum = ((number % 100) / 10);
+	   int fourthnum = (number % 10);
 	   
-	   // Reverse the Encryption
-	   a = a - 7;
-	   	if (a < 0) {
-	   		a += 10;
-	   	}
-	   
-	   b = b - 7;
-	   	if (b < 0) {
-	   		b += 10;
-		}
-	   
-	   c = c - 7;
-	   	if (c < 0) {
-	   		c += 10;
-		}
-	   
-	   d = d - 7;
-	   	if (d < 0) {
-		    d += 10;
-		}
-	   
-	   // Return the original number to the Application class  
-	   return (c * 1000 + d * 100 + a * 10 + b);	
+	  //Decrypt the numbers into the original digits 
+	  firstnum = firstnum - 7;
+	  if (firstnum < 0) firstnum += 10;
+	   	
+	  secondnum = secondnum - 7;
+	  if (secondnum < 0) secondnum += 10;
+		
+	  thirdnum = thirdnum - 7;
+	  if (thirdnum < 0)  thirdnum += 10;
+		
+	  fourthnum = fourthnum - 7;
+	  if (fourthnum < 0) fourthnum += 10;
+	  //Reorganize the numbers and return the already decrypted number	
+	  DecryptedNumber = (thirdnum * 1000 + fourthnum * 100 + firstnum * 10 + secondnum);	
+	  return DecryptedNumber;
 	}
 }
