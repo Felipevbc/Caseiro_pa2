@@ -1,32 +1,39 @@
 import java.util.Scanner;
 
-
+//Declare the Application class
 public class Application {
 	
 	public static void main(String[] args) {
 		
-  try (Scanner integer = new Scanner(System.in)) {
-		int n;
+ 		 try (Scanner integer = new Scanner(System.in)) {
+		
+			int number;
 			
-			System.out.println("Select Method: 1. Encryption or 2. Decryption");
+			System.out.println("What do you want to do? : 1. Encrypt my number or 2. Decrypt my number");
 			int choice = integer.nextInt();
 			
-			if (choice == 1 ) {
+	  			//Encryption choice
+				if (choice == 1 ) {
+					//Prompt for user input
+					System.out.println("Enter your number: \n");	
+					number = integer.nextInt();
+					//Print the number(already encrypted) onto the screen
+					System.out.println("\nThe encrypted number is: " +Encrypter.encrypt(number));
+			}
+			
+	  			//Decryption choice
+				if (choice == 2 ) {
+					//Prompt the user for a number
+					System.out.println("Enter your number: \n");	
+					number = integer.nextInt();
+					//Print the decrypted number onto the screen
+					System.out.println("After being decrypted, the number is: " +Decrypter.decrypt(number));
+			}
+				//Third choice, the wrong one
+			 	else {
+					System.out.println("You chose... poorly");
+				}
+		 }
 		
-			System.out.println("\nEnter a four digit number:");	
-			n = integer.nextInt();
-			
-	
-			System.out.println("\nThe encrypted number is: " +Encrypter.encrypt(n));
-			}
-			
-			if (choice == 2 ) {
-				
-				System.out.println("\nEnter a four digit number:");	
-				n = integer.nextInt();
-				
-				System.out.println("\nThe decrypted number is: " +Decrypter.decrypt(n));
-			}
-		}
 	}
 }
